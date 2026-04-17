@@ -16,11 +16,12 @@ powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | ie
 
 ## Installation
 
-Clone this repository and install the environment:
+1. Click **"Use this template"** → **"Create a new repository"** on GitHub to create your own copy.
+2. Clone your new repository and install the environment:
 
 ```bash
-git clone https://github.com/Statistics-Trainings/ml-setup.git
-cd ml-setup
+git clone https://github.com/<your-username>/<your-repo-name>.git
+cd <your-repo-name>
 uv sync
 ```
 
