@@ -19,7 +19,7 @@ powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | ie
 Clone this repository and install the environment:
 
 ```bash
-git clone https://github.com/PhilippBach/ml-setup.git
+git clone https://github.com/Statistics-Trainings/ml-setup.git
 cd ml-setup
 uv sync
 ```
