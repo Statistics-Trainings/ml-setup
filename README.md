@@ -35,6 +35,16 @@ This will automatically:
 uv run jupyter lab
 ```
 
+## Initializing the Jupyter Kernel
+
+If Jupyter does not automatically detect the environment, register it manually as a kernel:
+
+```bash
+uv run python -m ipykernel install --user --name ml-setup --display-name "ML Seminar"
+```
+
+Then restart Jupyter Lab and select **ML Seminar** from the kernel menu.
+
 ## Packages included
 
 | Package | Purpose |
