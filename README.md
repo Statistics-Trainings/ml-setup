@@ -1,6 +1,6 @@
-# ML Seminar — Environment Setup
+# ML Course — Environment Setup
 
-This repository contains the Python environment specification for the **ML Seminar Course** at FU Berlin (Summer Term 2026). Use it to install a ready-to-go environment with all required packages via [uv](https://docs.astral.sh/uv/).
+This repository contains the Python environment specification for the **ML Course Course** at FU Berlin (Summer Term 2026). Use it to install a ready-to-go environment with all required packages via [uv](https://docs.astral.sh/uv/).
 
 ## Prerequisites
 
@@ -41,10 +41,10 @@ uv run jupyter lab
 If Jupyter does not automatically detect the environment, register it manually as a kernel:
 
 ```bash
-uv run python -m ipykernel install --user --name ml-setup --display-name "ML Seminar"
+uv run python -m ipykernel install --user --name ml-setup --display-name "ML Course"
 ```
 
-Then restart Jupyter Lab and select **ML Seminar** from the kernel menu.
+Then restart Jupyter Lab and select **ML Course** from the kernel menu.
 
 ## Packages included
 

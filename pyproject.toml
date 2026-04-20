@@ -1,7 +1,7 @@
 [project]
 name = "machine-learning"
 version = "0.1.0"
-description = "ML Seminar Course Materials — FU Berlin Summer Term 2026"
+description = "ML Course Course Materials — FU Berlin Summer Term 2026"
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
