@@ -1,0 +1,89 @@
+---
+title: "ML Course — Presentation"
+author: "Your Name"
+date: today
+format:
+  beamer:
+    theme: Madrid
+    colortheme: beaver
+    fonttheme: structurebold
+    aspectratio: 169
+    keep-tex: false
+execute:
+  echo: true
+  warning: false
+jupyter: python3
+bibliography: references.bib
+---
+
+## Agenda
+
+- Motivation
+- Data
+- Method
+- Results
+
+## Motivation
+
+- State the research question [@hastie2009]
+- @hastie2009 frame this as a bias-variance tradeoff
+
+## Data
+
+```{python}
+import numpy as np
+import pandas as pd
+
+rng = np.random.default_rng(42)
+df = pd.DataFrame({"x": rng.uniform(0, 10, 50),
+                   "y": rng.normal(5, 2, 50)})
+df.head(4)
+```
+
+## Visualization
+
+```{python}
+#| echo: false
+import matplotlib.pyplot as plt
+
+fig, ax = plt.subplots(figsize=(5, 3))
+ax.scatter(df["x"], df["y"], alpha=0.7)
+ax.set(xlabel="x", ylabel="y")
+plt.tight_layout()
+plt.show()
+```
+
+## Method
+
+\begin{columns}
+\begin{column}{0.5\textwidth}
+  \textbf{Approach}
+  \begin{itemize}
+    \item Linear regression
+    \item OLS estimation
+  \end{itemize}
+\end{column}
+\begin{column}{0.5\textwidth}
+  \textbf{Assumptions}
+  \begin{itemize}
+    \item Linearity
+    \item Homoskedasticity
+  \end{itemize}
+\end{column}
+\end{columns}
+
+## Results
+
+```{python}
+from sklearn.linear_model import LinearRegression
+
+m = LinearRegression().fit(df[["x"]], df["y"])
+print(f"Intercept: {m.intercept_:.2f},  Slope: {m.coef_[0]:.2f}")
+```
+
+## Conclusion
+
+- Key takeaway 1
+- Key takeaway 2
+
+## References

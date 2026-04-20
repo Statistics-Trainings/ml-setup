@@ -1,0 +1,71 @@
+---
+title: "ML Course — Report Template"
+author: "Your Name"
+date: today
+format:
+  html:
+    toc: true
+    toc-depth: 2
+    number-sections: true
+    self-contained: true
+    theme: cosmo
+    code-fold: true
+  pdf:
+    toc: true
+    number-sections: true
+    colorlinks: true
+execute:
+  echo: true
+  warning: false
+jupyter: python3
+bibliography: references.bib
+---
+
+## Introduction
+
+Replace this section with your analysis. This template demonstrates the basic structure of a Quarto report.
+
+Linear regression is a foundational method in supervised learning [@hastie2009].
+@hastie2009 provide a comprehensive treatment of regularization and model selection.
+
+## Loading Data
+
+```{python}
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+
+rng = np.random.default_rng(42)
+n = 100
+x = rng.uniform(0, 10, n)
+y = 2 * x + rng.normal(0, 2, n)
+
+df = pd.DataFrame({"x": x, "y": y})
+df.describe().round(2)
+```
+
+## Visualization
+
+```{python}
+fig, ax = plt.subplots(figsize=(6, 4))
+ax.scatter(df["x"], df["y"], alpha=0.6)
+ax.set(xlabel="x", ylabel="y", title="Simulated data")
+plt.tight_layout()
+plt.show()
+```
+
+## Model
+
+```{python}
+from sklearn.linear_model import LinearRegression
+
+model = LinearRegression().fit(df[["x"]], df["y"])
+print(f"Intercept: {model.intercept_:.2f}")
+print(f"Slope:     {model.coef_[0]:.2f}")
+```
+
+## Conclusion
+
+Summarize your findings here.
+
+## References

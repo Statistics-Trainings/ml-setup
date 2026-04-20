@@ -1,0 +1,90 @@
+---
+title: "ML Course — Presentation"
+author: "Your Name"
+date: today
+format:
+  revealjs:
+    theme: simple
+    slide-number: true
+    incremental: false
+    transition: slide
+    code-fold: false
+execute:
+  echo: true
+  warning: false
+jupyter: python3
+bibliography: references.bib
+---
+
+## Agenda
+
+- Motivation
+- Data
+- Method
+- Results
+
+## Motivation
+
+- State the research question [@hastie2009]
+- @hastie2009 frame this as a bias-variance tradeoff
+
+::: {.notes}
+Speaker notes go here — only visible in presenter mode (press `S`).
+:::
+
+## Data
+
+```{python}
+import numpy as np
+import pandas as pd
+
+rng = np.random.default_rng(42)
+df = pd.DataFrame({"x": rng.uniform(0, 10, 50),
+                   "y": rng.normal(5, 2, 50)})
+df.head()
+```
+
+## Visualization
+
+```{python}
+import matplotlib.pyplot as plt
+
+fig, ax = plt.subplots(figsize=(6, 3.5))
+ax.scatter(df["x"], df["y"], alpha=0.7)
+ax.set(xlabel="x", ylabel="y")
+plt.tight_layout()
+plt.show()
+```
+
+## Method
+
+:::: {.columns}
+::: {.column width="50%"}
+**Approach**
+
+- Linear regression
+- OLS estimation
+:::
+::: {.column width="50%"}
+**Assumptions**
+
+- Linearity
+- Homoskedasticity
+:::
+::::
+
+## Results
+
+```{python}
+from sklearn.linear_model import LinearRegression
+
+m = LinearRegression().fit(df[["x"]], df["y"])
+print(f"Intercept: {m.intercept_:.2f},  Slope: {m.coef_[0]:.2f}")
+```
+
+## Conclusion
+
+- Key takeaway 1
+- Key takeaway 2
+
+## References
