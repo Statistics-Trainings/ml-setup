@@ -13,4 +13,9 @@ dependencies = [
     "jupyter>=1.1",
     "ipykernel>=6.29",
     "statsmodels>=0.14.6",
+    "seaborn>=0.13.2",
+    "plotly>=6.7.0",
+    "torchvision>=0.25.0",
+    "d2l>=0.17.0",
+    "scipy>=1.17.1",
 ]
