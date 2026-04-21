@@ -1,6 +1,22 @@
 # ML Course — Environment Setup
 
-This repository contains the Python environment specification for the **ML Course Course** at FU Berlin (Summer Term 2026). Use it to install a ready-to-go environment with all required packages via [uv](https://docs.astral.sh/uv/).
+This repository is the starting point for the **ML Seminar** at FU Berlin (Bachelor). It provides a reproducible Python environment and ready-to-use templates so you can focus on the course content rather than setup.
+
+## Repository structure
+
+```
+ml-setup/
+├── pyproject.toml       # Python dependencies
+├── quarto_intro/        # Quarto templates (report, slides) and citation example
+│   ├── report.qmd       # Report rendered to HTML and PDF
+│   ├── slides_revealjs.qmd   # Browser-based slides (RevealJS)
+│   ├── slides_beamer.qmd     # PDF slides (LaTeX Beamer)
+│   └── references.bib   # BibTeX reference file
+└── jupyter_demo/        # Minimal Jupyter notebook demo
+    └── demo.ipynb
+```
+
+The environment is managed with [uv](https://docs.astral.sh/uv/) and pinned in `uv.lock` to ensure everyone runs the exact same package versions.
 
 ## Prerequisites
 
